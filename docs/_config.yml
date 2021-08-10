@@ -23,9 +23,10 @@ email: falko@universalamateur.net
 description: > # this means to ignore newlines until "baseurl:"
 This is the Blog of Falko, the universalamateur.
 Information about the RL person and the projects are to be found here
-baseurl: "/docs/" # the subpath of your site, e.g. /blog
+
+baseurl: "docs/" # the subpath of your site, e.g. /blog
 url: "https://universalamateur.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: @falkosieverding
+twitter_username: falkosieverding
 github_username:  universalamateur
 
 # Build settings
