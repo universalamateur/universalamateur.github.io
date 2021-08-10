@@ -20,7 +20,7 @@
 
 title: Universalamateur
 email: falko@universalamateur.net
-description: >- # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "baseurl:"
 This is the Blog of Falko, the universalamateur.
 Information about the RL person and the projects are to be found here
 baseurl: "/docs/" # the subpath of your site, e.g. /blog
