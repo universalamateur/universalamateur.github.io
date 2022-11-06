@@ -3,7 +3,7 @@
 
 AUTHOR = 'Universalamateur'
 SITENAME = 'Blog Universalamateur'
-SITEURL = 'https://universalamateur.gitlab.io/'
+SITEURL = 'https://universalamateur.gitlab.io'
 
 PATH = 'content'
 
