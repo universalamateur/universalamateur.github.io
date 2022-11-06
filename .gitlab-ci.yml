@@ -9,7 +9,7 @@ pages:
   ## Use a custom theme.
   ## See https://gitlab.com/pages/pelican/-/blob/main/README.md#use-a-custom-theme
   ##
-  - svn export https://github.com/getpelican/pelican-themes/trunk/pelican-bootstrap3 /tmp/bootlex
+  - svn export https://github.com/getpelican/pelican-themes/trunk/pelican-bootstrap3 /tmp/pelican-bootstrap3
   - pelican-themes --install /tmp/pelican-bootstrap3
   - make publish
   artifacts:
