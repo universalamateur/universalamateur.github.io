@@ -21,12 +21,21 @@ To use a custom theme:
    THEME = '/tmp/bootlex'
    ```
 
-## Troubleshooting
+## Local installation
 
-1. CSS is missing! That means two things:
+```bash
+python3 -m venv .venv
+./.venv/bin/pip install --upgrade pip
+./.venv/bin/pip install pelican
+svn export https://github.com/getpelican/pelican-themes/trunk/bootlex /tmp/bootlex
+pelican-themes --install /tmp/bootlex
+source ./.venv/bin/activate
+```
 
-    Either that you have wrongly set up the CSS URL in your templates, or
-    your static generator has a configuration option that needs to be explicitly
-    set in order to serve static assets under a relative URL.
+### Mac M1
+
+### Linux x86
+
+
 
 [pelican]: http://blog.getpelican.com/
