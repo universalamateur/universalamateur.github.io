@@ -9,7 +9,8 @@ pages:
   ## Use a custom theme.
   ## See https://gitlab.com/pages/pelican/-/blob/main/README.md#use-a-custom-theme
   ##
-  - svn export https://github.com/getpelican/pelican-themes/trunk/bootlex /tmp/bootlex
+  - mkdir tmp && cd tmp
+  - git clone git://github.com/alexex/bootlex.git
   - pelican-themes --install /tmp/bootlex
   - make publish
   artifacts:
