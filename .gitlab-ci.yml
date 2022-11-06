@@ -3,7 +3,7 @@ image: python:3.8-alpine
 pages:
   stage: deploy
   script:
-  - apk add --update --no-cache make git
+  - apk add --update --no-cache make subversion
   - pip install -r requirements.txt
   ##
   ## Use a custom theme.
