@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Universalamateur'
-SITENAME = 'Statis Website via Pelican on GitLab for UniversalAmateur!'
+SITENAME = 'Blog Universalamateur'
 SITEURL = 'https://universalamateur.gitlab.io/'
 
 PATH = 'content'
@@ -29,7 +29,7 @@ SOCIAL = (('LinkedIn', 'https://www.linkedin.com/in/falko-sieverding-universalam
 DEFAULT_PAGINATION = 10
 
 # Adding a custom theme
-THEME = '/tmp/bootlex'
+THEME = '/tmp/pelican-bootstrap3'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
