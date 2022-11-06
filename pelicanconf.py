@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'GitLab'
-SITENAME = 'Example Pelican website using GitLab Pages!'
-SITEURL = ''
+AUTHOR = 'Universalamateur'
+SITENAME = 'Statis Website via Pelican on GitLab for UniversalAmateur!'
+SITEURL = 'https://universalamateur.gitlab.io/'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Athens'
+TIMEZONE = 'Europe/Berlin'
 
 DEFAULT_LANG = 'en'
 
