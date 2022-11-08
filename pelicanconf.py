@@ -29,7 +29,7 @@ SOCIAL = (('LinkedIn', 'https://www.linkedin.com/in/falko-sieverding-universalam
 DEFAULT_PAGINATION = 10
 
 # Adding a custom theme
-THEME = '/tmp/pelican-bootstrap3'
+THEME = '/tmp/blue-penguin'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
