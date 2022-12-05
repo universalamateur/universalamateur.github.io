@@ -60,7 +60,6 @@ _testmain.go
 public/
 resources/
 .hugo_build.lock
-themes/
 go.mod
 go.sum
 
