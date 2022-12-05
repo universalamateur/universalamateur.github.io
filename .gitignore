@@ -64,5 +64,3 @@ themes/
 go.mod
 go.sum
 
-#Git
-.gitmodules
