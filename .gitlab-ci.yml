@@ -12,8 +12,7 @@ default:
     - apk add --update --no-cache git go
     - git submodule update --init --recursive
     - hugo mod init gitlab.com/UniversalAmateur/universalamateur.gitlab.io
-#    - git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-    - hugo mod get -u github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+    - hugo mod get -u github.com/theNewDynamic/gohugo-theme-ananke
 
 test:
   script:
