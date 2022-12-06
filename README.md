@@ -11,13 +11,12 @@ cd universalamateur.gitlab.io
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
 echo "theme = 'ananke'" >> config.toml
-hugo server
+hugo server /D
 ```
 
 ## Implemented custom theme
 
 ## Local installation
-
 
 ### MacOS M1
 
@@ -27,4 +26,6 @@ brew install hugo
 
 ### Linux x86
 
-To come.
+```bash
+sudo apt install hugo
+```
