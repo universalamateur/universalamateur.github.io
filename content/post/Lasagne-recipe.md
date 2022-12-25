@@ -1,7 +1,7 @@
 ---
 title: "Lasagne Recipe"
 date: November 7, 2022
-draft: true
+draft: false
 image: 
 author:
 tags: ["food", "recipe"]
