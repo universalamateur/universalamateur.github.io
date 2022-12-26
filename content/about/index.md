@@ -1,10 +1,10 @@
 ---
-title: "AboutMe"
+title: "About Me"
 description: "A short Bio Page about myself, the Universalamateur."
 menu:
   main:
     weight: 1
-date: 2022-11-05T10:45:28+01:00
+date: November 5, 2022
 draft: false
 featured_image: ''
 ---

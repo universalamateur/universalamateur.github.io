@@ -1,7 +1,16 @@
-# My personal blog Universalamateur.net powered by Hugo on GitLab Pages
+---
+title: "Blog Setup With Hugo on GitLab"
+date: December 26, 2022
+draft: false
+tags: ["Technology"]
+type: post
+featured_image: ""
+description: ""
+---
 
-This is the README to my personal blog powered by [HuGo](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/) Static Site Generator using [GitLab Pages](https://gitlab.com/pages/hugo).
-The result you can find on [Universalamateur.net](https://Universalamateur.net/), [falko-sieverding.de](https://www.falko-sieverding.de/ ) and [Universalamateur.gitlab.io](https://Universalamateur.gitlab.io/)
+## My personal blog Universalamateur.net powered by Hugo on GitLab Pages
+
+Here I describe the intial setup of my personal blog powered by the static site generator [HuGo](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/) using [GitLab Pages](https://gitlab.com/pages/hugo).  
 
 ## Settings in GitLab
 

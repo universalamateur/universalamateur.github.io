@@ -2,8 +2,8 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date | time.Format ":date_long" }}
 draft: true
-image: 
-author:
-tags:
-categories:
+tags: []
+type: post
+featured_image: ""
+description: ""
 ---
