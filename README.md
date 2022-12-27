@@ -82,7 +82,7 @@ description: ""
 2. include in the Front Matter: `featured_image: '/images/NAME_OF_PICTURE.jpg'`
 3. to hide the header text on the featured image on a page, set in Fornt Matter `omit_header_text: true`
 
-### Implemented Categories
+### Folder Structure after setup
 
 ```markdown
 .
@@ -107,8 +107,7 @@ description: ""
 
 ### Blog Post Creation Commands
 
-- `hugo new General/NAME-OF-POST.md`
-- `hugo new General/NAME-OF-POST.md`
+- `hugo new post/NAME-OF-POST.md`
 
 ## Ideas for the future
 
