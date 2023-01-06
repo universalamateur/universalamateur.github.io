@@ -10,7 +10,14 @@ description: ""
 
 ## How TeamOps principles foster discontinuous innovation at GitLab
 
-### What is TeamOps?
+1. TeamOps, as an Operating Model, emphasizes the importance of Decision Velocity and Agency
+2. Discontinuous Innovation is not a small evolutionary step and difficult to predict.
+3. TeamOps fosters Discontinuous Innovation by encouraging 2-way-door Decisions.
+4. GitLab encourages everyone to question and propose alternatives to past decisions.
+5. Explicit Opportunity for undistracted incubation is another aspect of the GitLab way with TeamOps.
+6. TeamOps allows GitLab to benefit from both, high decision velocity and market changing disruptive innovations.
+
+## What is TeamOps?
 
 TeamOps is an [Operating Model](https://en.wikipedia.org/wiki/Operating_model) that aims to help teams and organizations make greater progress by focusing on how team members relate and work together.
 
@@ -29,7 +36,7 @@ By adopting the principles and action tenets of TeamOps, organizations can creat
 
 It has been developed and tested at GitLab, and is now being [offered](https://levelup.gitlab.com/learn/course/teamops) to other organizations as a way to improve their operations.
 
-### What is discontinuous innovation?
+## What is discontinuous innovation?
 
 Discontinuous innovation, also known as [disruptive innovation](https://en.wikipedia.org/wiki/Disruptive_innovation), refers to a type of innovation that creates a new market or significantly changes an existing market by introducing a product or service that is significantly better or cheaper than what is currently available.
 
@@ -39,7 +46,7 @@ Discontinuous innovation can be difficult to predict and risky for organizations
 
 However, it can also lead to significant growth and success for companies that are able to successfully introduce disruptive products or services to the market.
 
-### Why does discontinuous innovation need fostering in TeamOps?
+## Why does discontinuous innovation need fostering in TeamOps?
 
 TeamOps, with its action tenets, accelerates your organization's Decision Velocity tremendously.
 
@@ -47,7 +54,7 @@ All Decisions focused to the [smallest scope](https://about.gitlab.com/handbook/
 
 Umpteen resolutions keep your organization agile and its change velocity high.
 
-Everyone in your organization should feel free to disagree with a decision, after they commit and act according to the resolution. A [collaborative](https://about.gitlab.com/handbook/values/#collaboration) decision, following the TeamOps model, does not [need a consensus](https://about.gitlab.com/handbook/values/#collaboration-is-not-consensus), but can [always be questioned](https://about.gitlab.com/handbook/values/#disagree-commit-and-disagree), iterated upon or even reverted. Treating every decision as a [two way door](https://about.gitlab.com/handbook/values/#make-two-way-door-decisions), rolling back on an iteration and implementing the better solution is the rule, realizing [blameless problem solving](https://about.gitlab.com/handbook/values/#blameless-problem-solving).
+Everyone in your organization should feel free to disagree with a decision, after they commit and act according to the resolution. A [collaborative](https://about.gitlab.com/handbook/values/#collaboration) decision, following the TeamOps model, does not [need a consensus](https://about.gitlab.com/handbook/values/#collaboration-is-not-consensus), but can [always be questioned](https://about.gitlab.com/handbook/values/#disagree-commit-and-disagree), iterated upon or even reverted. Treating every decision as a [2-way-door](https://about.gitlab.com/handbook/values/#make-two-way-door-decisions), rolling back on an iteration and implementing the better solution is the rule, realizing [blameless problem solving](https://about.gitlab.com/handbook/values/#blameless-problem-solving).
 
 The high decision velocity empowers your teams and the whole organization to adapt and get more efficient.
 
@@ -59,11 +66,11 @@ To stay ahead of the curve and be competitive in the market, your organization n
 
 Additionally to a high decision velocity an organization can stay relevant and adapt to changing market conditions, by incubating disruptive innovations.
 
-### How does GitLab foster discontinuous innovation with TeamOps?
+## How does GitLab foster discontinuous innovation with TeamOps?
 
 GitLab facilitates discontinuous innovations in several ways.
 
-#### Everything can be questioned
+### Everything can be questioned
 
 GitLab’s sub value [“Disagree, commit, and disagree”](https://about.gitlab.com/handbook/values/#disagree-commit-and-disagree), in the [“Results”](https://about.gitlab.com/handbook/values/#results) section of the six [“CREDIT”](https://about.gitlab.com/handbook/values/#credit) core values, implements the reversibility of every decision, replacing it with a better one. Every team member can propose a better solution for a past decision and expect valid feedback plus the possibility for implementation.
 
@@ -79,7 +86,7 @@ At the end Dimitri and his other co-founder, [Sid Sijbrandij](https://gitlab.com
 
 Kamil’s discontinuous innovation, away from the market prevailing many [small tools](https://about.gitlab.com/devops-tools/) in the DevOps sector, led GitLab to hold the position of the [one DevSecOps Plattform](https://about.gitlab.com/), reducing cost, effort and complexity for all its customers.
 
-#### Explicit room for long-term bets
+### Explicit room for long-term bets
 
 To  expand GitLab’s [Serviceable Addressable Market (SAM)](https://en.wikipedia.org/wiki/Serviceable_available_market) in areas, which fit within [GitLab's company mission](https://about.gitlab.com/company/mission/) that are currently not serviced, the [Incubation Engineering Department](https://about.gitlab.com/handbook/engineering/incubation/) has been founded.
 
@@ -89,7 +96,7 @@ The established [Software Demo Process](https://about.gitlab.com/handbook/engine
 
 Through TeamOps as operational model at  GitLab, this extension of the organization has and will lead to disruptive innovations in the product, for example [⛅🌱 Cloud Seed](https://about.gitlab.com/handbook/engineering/incubation/cloud-seed/) and [OKR Management](https://about.gitlab.com/handbook/engineering/incubation/okr/).
 
-### Conclusion
+## Conclusion
 
 Fostering discontinuous innovation is important for GitLab, because it will lead to significant competitive advantages and help them stay ahead of the curve in the DevSecOps sector.
 
@@ -108,3 +115,7 @@ At GitLab, these principles are supported by a number of action tenets, includin
 GitLab also emphasizes the [importance of iteration](https://about.gitlab.com/handbook/values/#iteration) and encourages team members to break down complex problems into [smaller, more manageable pieces](https://about.gitlab.com/handbook/values/#minimal-viable-change-mvc) that can be tackled one step at a time.
 
 Overall, the principles and action tenets of [TeamOps](https://about.gitlab.com/teamops/) can create an environment that supports and fosters discontinuous innovation by empowering team members to take [ownership](https://about.gitlab.com/handbook/values/#ownership) of their work, encouraging creativity and risk-taking, and focusing on continuous iteration and learning.
+
+## Free Training and Certification - Your start into TeamOps
+
+If you are interested in learning more about TeamOps and how to implement this operating model, signup for the free [Teamops Certification by GitLab](https://levelup.gitlab.com/courses/teamops).
