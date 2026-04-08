@@ -1,9 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date | time.Format ":date_long" }}
+date: {{ .Date }}
 draft: true
 tags: []
-featured_image: ""
-description: ""
+summary: ""
 ---
-

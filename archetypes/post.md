@@ -1,9 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date | time.Format ":date_long" }}
+date: {{ .Date }}
 draft: true
 tags: []
-type: post
-featured_image: ""
-description: ""
+summary: ""
+showtoc: true
 ---
