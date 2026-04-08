@@ -1,4 +1,4 @@
-image: golang:1.24-alpine
+image: debian:bookworm-slim
 
 variables:
   HUGO_VERSION: "0.160.0"
@@ -6,10 +6,9 @@ variables:
 
 pages:
   before_script:
-    - apk add --no-cache wget
-    - wget -q -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-    - tar -xf hugo.tar.gz hugo
-    - mv hugo /usr/local/bin/
+    - apt-get update && apt-get install -y --no-install-recommends wget ca-certificates
+    - wget -q -O hugo.deb "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+    - dpkg -i hugo.deb
     - hugo version
   script:
     - hugo --minify
@@ -21,10 +20,9 @@ pages:
 
 test:
   before_script:
-    - apk add --no-cache wget
-    - wget -q -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-    - tar -xf hugo.tar.gz hugo
-    - mv hugo /usr/local/bin/
+    - apt-get update && apt-get install -y --no-install-recommends wget ca-certificates
+    - wget -q -O hugo.deb "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+    - dpkg -i hugo.deb
   script:
     - hugo --minify
   rules:
