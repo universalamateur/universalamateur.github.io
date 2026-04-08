@@ -1,11 +1,9 @@
 ---
 title: "How TeamOps Principles Foster Discontinuous Innovation at GitLab"
-date: December 27, 2022
+date: 2022-12-27
 draft: false
 tags: ["GitLab", "TeamOps", "Leadership"]
-type: post
-featured_image: ""
-description: ""
+summary: "How GitLab uses TeamOps to foster discontinuous innovation through decision velocity and empowerment."
 ---
 
 ## How TeamOps principles foster discontinuous innovation at GitLab

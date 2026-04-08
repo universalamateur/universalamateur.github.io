@@ -1,11 +1,9 @@
 ---
 title: "The Initial Post"
-date: November 5, 2022
+date: 2022-11-05
 draft: false
-tags: ["GitLab", "HuGo", "blog"]
-type: post
-featured_image: ""
-description: ""
+tags: ["GitLab", "Hugo", "blog"]
+summary: "Hello world, why this blog exists, and what to expect."
 ---
 
 ## Who am I?

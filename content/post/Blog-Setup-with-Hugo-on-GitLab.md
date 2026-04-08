@@ -1,11 +1,9 @@
 ---
 title: "Blog Setup With Hugo on GitLab"
-date: December 26, 2022
+date: 2022-12-26
 draft: false
-tags: ["Technology"]
-type: post
-featured_image: ""
-description: ""
+tags: ["GitLab", "Hugo", "tutorial"]
+summary: "Setting up a personal blog with Hugo and GitLab Pages."
 ---
 
 ## My personal blog Universalamateur.net powered by Hugo on GitLab Pages

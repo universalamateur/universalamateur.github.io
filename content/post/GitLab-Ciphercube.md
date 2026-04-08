@@ -1,11 +1,9 @@
 ---
 title: "GitLab CipherCube"
-date: December 8, 2022
+date: 2022-12-08
 draft: true
-image: 
-author:
 tags: ["GitLab", "Security", "brain-teaser"]
-categories: ["Security"]
+summary: "Deciphering the GitLab security team's laser-engraved wooden cipher cube."
 ---
 
 ## Analysis of the GitLab Ciphercube
