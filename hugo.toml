@@ -1,0 +1,129 @@
+baseURL = "https://universalamateur.gitlab.io/"
+languageCode = "en-us"
+title = "Universalamateur"
+theme = "PaperMod"
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = "production"
+  title = "Universalamateur"
+  description = "The personal blog of Falko Sieverding"
+  keywords = ["blog", "AI", "DevSecOps", "board games"]
+  author = "Falko Sieverding"
+  DateFormat = "January 2, 2006"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Universalamateur"
+    Content = """
+AI Solutions Architect from Düsseldorf. Writing about AI agents, DevSecOps, board games, and whatever else I find worth sharing.
+"""
+
+  [[params.socialIcons]]
+    name = "gitlab"
+    url = "https://gitlab.com/fsieverding"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/universalamateur"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/falko-sieverding-universalamateur"
+
+  [[params.socialIcons]]
+    name = "mastodon"
+    url = "https://fosstodon.org/@universalamateur"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    limit = 10
+    keys = ["title", "permalink", "summary", "content"]
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+  [params.label]
+    text = "Universalamateur"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Blog"
+  url = "/post/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/archives/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 50
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
