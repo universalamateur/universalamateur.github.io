@@ -11,7 +11,7 @@ Watching two budget lines converge in opposite directions, one falling slowly an
 
 The salary line is declining for reasons that have nothing to do with a single cause. Economic pressure compresses headcount. Efficiency mandates from boards demand more output per person. Post-pandemic restructuring continues to unwind inflated teams. [Natural attrition](https://en.wikipedia.org/wiki/Attrition_(human_resources)) goes unreplaced, quarter after quarter, because the backfill request gets quietly deprioritized. AI productivity gains compound on top of all of this, making it possible for smaller teams to absorb work that previously required new hires. No single force is driving the salary line down. Several forces are pushing in the same direction, and they reinforce each other.
 
-The token line is climbing, and nobody is watching the meter. Every developer running [GitHub Copilot](https://github.com/features/copilot) consumes tokens. Every [Cursor](https://cursor.com/) session consumes tokens. Every [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agent running overnight on a refactoring task consumes tokens. The product managers using AI chat to draft specs, the designers generating variations, the QA engineers using agents to write test cases, all of them consume tokens. And the bill lands in a dozen different budget lines because nobody set up unified tracking. I wrote about this visibility gap in [The Billing Problem Nobody Talks About](/post/the-billing-problem-nobody-talks-about/), and the problem has only gotten worse since.
+The token line is climbing, and nobody is watching the meter. Every developer running [GitLab Duo](https://about.gitlab.com/duo/) consumes tokens. Every [OpenAI Codex](https://openai.com/index/codex/) session consumes tokens. Every [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agent running overnight on a refactoring task consumes tokens. The product managers using AI chat to draft specs, the designers generating variations, the QA engineers using agents to write test cases, all of them consume tokens. And the bill lands in a dozen different budget lines because nobody set up unified tracking. I wrote about this visibility gap in [The Billing Problem Nobody Talks About](/post/the-billing-problem-nobody-talks-about/), and the problem has only gotten worse since.
 
 ## The small end is already there
 
@@ -33,7 +33,7 @@ Here is the thought experiment that I cannot stop running. Imagine that a compan
 
 I do not know when this happens. I do not know if it happens within five years or fifteen. I am honestly uncertain whether it happens at all, because salary lines are enormous and sticky, and token costs might decline faster than usage grows. The honest answer is that nobody knows, and anyone claiming certainty about the timeline is selling something.
 
-What I do know is that the directionality is clear. The salary line trends down across most knowledge-work-heavy industries. The token line trends up across all of them. The rate of convergence is the only open question.
+What I believe is that the directionality is clear, even if the timeline is not. The salary line appears to trend down across most knowledge-work-heavy industries. The token line appears to trend up across all of them. Whether and when they converge is genuinely open.
 
 ## The cloud precedent, imperfect but instructive
 
@@ -49,4 +49,4 @@ I have one ask, directed at anyone who controls a budget. CFOs, engineering VPs,
 
 My prediction is that most cannot answer this question, not because the data does not exist, but because nobody has been asked to assemble it. And that is precisely the problem. The salary line has a department, a VP, a board-level review, and a quarterly forecast. The token line has a dozen scattered invoices and no owner.
 
-Track the ratio. It is the leading indicator that nobody is watching, and by the time it becomes visible in the quarterly earnings call, the scissors will have already crossed.
+Track the ratio. I suspect it is the leading indicator that nobody is watching, and by the time someone thinks to check, the scissors may have already crossed.
