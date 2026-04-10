@@ -1,7 +1,7 @@
 ---
 title: "GitLab CipherCube"
 date: 2022-12-08
-lastmod: 2026-04-09
+lastmod: 2026-04-10
 draft: false
 tags: ["GitLab", "Security", "brain-teaser"]
 summary: "Deciphering the GitLab security team's laser-engraved wooden cipher cube."
@@ -63,16 +63,16 @@ Next I translated the patterns into binary for all the sides as well as into dec
 |  bottom       | 7   | 00000110 | 6        |
 |  bottom       | 8   | 11111111 | 255        |
 |-|-|-|-|
-|  right       | 1   |        |         |
-|right         | 2   |        |         |
-|right         | 3   |        |         |
-|right         | 4   |        |         |
-|right         | 5   |        |         |
-|  right       | 6   |        |         |
-|  right       | 7   |        |         |
-|  right       | 8   |        |         |
+|  right       | 1   | 00010000 | 16 |
+|right         | 2   | 00001101 | 13 |
+|right         | 3   | 00000110 | 6 |
+|right         | 4   | 00001101 | 13 |
+|right         | 5   | 11111111 | 255 |
+|  right       | 6   | 00011000 | 24 |
+|  right       | 7   | 00010001 | 17 |
+|  right       | 8   | 00010000 | 16 |
 
-**Note:** The "Down" and "Bottom" data above was decoded from close-up photos using image analysis. The side names are tentative, I'll correct them once I re-examine the physical cube. The "Right" side remains unread from the available photos.
+**Note:** The side data above was decoded from close-up photos using image analysis (shield centroid detection + 8x8 grid snap). The side names (Up/Left/Down/Bottom/Right) are tentative — I'll correct them when I re-examine the physical cube.
 
 ## The cipher
 
@@ -98,29 +98,32 @@ Applying the same decode to the remaining sides:
 | Left | 5, 17, 15, 7, 4, 17 | **SECURE** |
 | Down | 19, 21, 6, 24, 13, 14 | **GITLAB** |
 | Bottom | 2, 4, 1, 6, 17, 15, 6 | **PROTECT** |
-| Right | ? | *unread* |
+| Right | 16, 13, 6, 13, [255], 24, 17, 16 | **DETAILED** (border mid-face) |
 
-The "Bottom" side is special: it has 7 data rows instead of 6, with only one border row at the bottom. Row 1 starts directly with P (byte 2), no leading "I" border.
+Two sides break the symmetric "I ··· I" frame:
+
+- **Bottom** has 7 data rows with the border only at the bottom. Row 1 starts directly with P (byte 2), no leading "I".
+- **Right** has the border row *in the middle* of the face (row 5). Rows 1-4 decode to `D-A-T-A`, row 5 is the full-shield "I" border, rows 6-8 decode to `L-E-D`. Read end-to-end it spells **DETAILED** — though the literal pattern is `D-A-T-A-I-L-E-D`, which also works as "DATA-LED" with the border "I" acting as a hyphen. Either way it fits the security-pledge theme.
 
 ![CipherCube PROTECT side](/CyberCube-protect-side.jpg 'CipherCube PROTECT side')
+
+![CipherCube DETAILED side](/CyberCube-detailed-side.jpg 'CipherCube DETAILED side')
 
 ## The message
 
 Reading the full 8-byte sequence per side, borders included:
 
-**I ASSURE I · I SECURE I · PROTECT I · I GITLAB I · I ??? I**
+**I ASSURE I · I SECURE I · PROTECT I · I GITLAB I · DETAILED**
 
-The border rows encode "I", making each side read as a pledge: "I ASSURE", "I SECURE", "I PROTECT", "I GITLAB" (as in "I am GitLab" or "I represent GitLab").
+The border rows decode to "I", and four of the sides read as a first-person pledge: **I ASSURE · I SECURE · I PROTECT · I GITLAB**. The fifth side moves the border to the middle, binding `DATA` and `LED` around it — the security team's work is *detailed*, *data-led*, or both. Nice design.
 
 ![CipherCube 3D overview](/CyberCube-overview.jpg 'CipherCube 3D overview')
 
-One side's word is still missing. Given the security theme, candidates like DEFEND, DETECT, or SHIELD would fit. The encoding for each:
+## Wrap-up
 
-- DEFEND → bytes: 16, 17, 18, 17, 0, 16
-- DETECT → bytes: 16, 17, 6, 17, 15, 6
-- SHIELD → bytes: 5, 20, 21, 17, 24, 16
+Five engraved sides, five words, one cipher. ROT13 over an 8x8 shield grid, with border rows pulling double duty as the letter "I" and as visual framing. The sixth face sits out of the cipher and carries the Tanuki.
 
-I'll need the physical cube in hand to read that last side and complete the message.
+What I like about the design: it's solvable from first principles. No key to guess, no lookup table needed. Once you notice the border rows decode to the same value as the word "I" in the pledge, the whole thing clicks open. Security swag that actually rewards security thinking.
 
 ![CipherCube Tanuki side](/CyberCube-tanuki.jpg 'CipherCube Tanuki')
 
