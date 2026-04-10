@@ -92,18 +92,20 @@ The border rows (all shields, value 255) also decode: (255+13) % 26 = 8 → **I*
 
 Applying the same decode to the remaining sides:
 
-| Side | Bytes (inner rows) | Decoded |
+| Side | Bytes (all 8 rows) | Decoded |
 |------|-------------------|---------|
-| Up | 13, 5, 5, 7, 4, 17 | **ASSURE** |
-| Left | 5, 17, 15, 7, 4, 17 | **SECURE** |
-| Down | 19, 21, 6, 24, 13, 14 | **GITLAB** |
-| Bottom | 2, 4, 1, 6, 17, 15, 6 | **PROTECT** |
-| Right | 16, 13, 6, 13, [255], 24, 17, 16 | **DETAILED** (border mid-face) |
+| Up | [255], 13, 5, 5, 7, 4, 17, [255] | I · **ASSURE** · I |
+| Left | [255], 5, 17, 15, 7, 4, 17, [255] | I · **SECURE** · I |
+| Down | [255], 19, 21, 6, 24, 13, 14, [255] | I · **GITLAB** · I |
+| Bottom | 2, 4, 1, 6, 17, 15, 6, [255] | **PROTECT** · I |
+| Right | 16, 13, 6, 13, [255], 24, 17, 16 | D-A-T-A · I · L-E-D |
+
+`[255]` marks full-shield rows. They decode to the letter **I** via `(255+13) % 26 = 8`, and double as visual framing — or, in the case of the Right side, as a hyphen embedded in the word.
 
 Two sides break the symmetric "I ··· I" frame:
 
 - **Bottom** has 7 data rows with the border only at the bottom. Row 1 starts directly with P (byte 2), no leading "I".
-- **Right** has the border row *in the middle* of the face (row 5). Rows 1-4 decode to `D-A-T-A`, row 5 is the full-shield "I" border, rows 6-8 decode to `L-E-D`. Read end-to-end it spells **DETAILED** — though the literal pattern is `D-A-T-A-I-L-E-D`, which also works as "DATA-LED" with the border "I" acting as a hyphen. Either way it fits the security-pledge theme.
+- **Right** puts the full-shield "I" in the *middle* of the face (row 5). Rows 1-4 decode to `D-A-T-A`, row 5 is the `I`, rows 6-8 decode to `L-E-D`. Read literally: **DATA-I-LED**. The cleanest interpretation is **DATA-LED** (a single compound word, with the middle I as hyphen) — a fitting adjective for a security team's approach.
 
 ![CipherCube PROTECT side](/CyberCube-protect-side.jpg 'CipherCube PROTECT side')
 
@@ -113,9 +115,9 @@ Two sides break the symmetric "I ··· I" frame:
 
 Reading the full 8-byte sequence per side, borders included:
 
-**I ASSURE I · I SECURE I · PROTECT I · I GITLAB I · DETAILED**
+**I ASSURE I · I SECURE I · PROTECT I · I GITLAB I · DATA-LED**
 
-The border rows decode to "I", and four of the sides read as a first-person pledge: **I ASSURE · I SECURE · I PROTECT · I GITLAB**. The fifth side moves the border to the middle, binding `DATA` and `LED` around it — the security team's work is *detailed*, *data-led*, or both. Nice design.
+Four sides read as a first-person pledge: **I ASSURE · I SECURE · I PROTECT · I GITLAB**. The fifth side drops the framing and makes the "I" part of the word itself, giving **DATA-LED** — the hyphenated adjective for a team whose work is driven by what the data says. Nice design.
 
 ![CipherCube 3D overview](/CyberCube-overview.jpg 'CipherCube 3D overview')
 
