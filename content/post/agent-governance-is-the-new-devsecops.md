@@ -21,7 +21,7 @@ Where I had to wire up [Podman](https://podman.io/) rootless containers, tmpfs m
 
 ## They are not alone
 
-AGT is the most complete implementation I have seen, but it is not an outlier. [AWS Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) applies runtime content filtering and grounding checks to model invocations. [CircleCI](https://circleci.com/) shipped an autonomous CI agent that diagnoses build failures and opens pull requests automatically. [Cursor](https://cursor.com/) built event-driven automations where AI-generated fixes merge without human intervention. Startups are building guardrails-as-a-service and agent supply chain security.
+AGT is the most complete implementation I have seen, but it is not an outlier. [AWS Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) applies runtime content filtering and grounding checks to model invocations. [CircleCI](https://circleci.com/) shipped an autonomous CI agent that diagnoses build failures and opens pull requests automatically. [Cursor](https://cursor.com/) built event-driven automations where AI-generated fixes are proposed as pull requests, with over a third merged directly. Startups are building guardrails-as-a-service and agent supply chain security.
 
 Multiple governance products appearing in the same month is not a coincidence. It is a category forming.
 
