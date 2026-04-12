@@ -3,40 +3,48 @@ title: "Agent Governance Is the New DevSecOps"
 date: 2026-04-12
 draft: false
 tags: ["AI", "security", "governance", "DevSecOps"]
-summary: "I spent weeks building agent governance by hand. Microsoft just open-sourced a toolkit that covers most of it."
+summary: "I spent weeks building agent governance by hand. Then Microsoft open-sourced a toolkit that covers most of it."
 showtoc: false
 ---
 
-I spent weeks building [agent governance by hand](/post/zero-trust-patterns-for-ai-developer-tools/). Container isolation, credential rotation, write gates, network policy, all wired together with [OPA](https://www.openpolicyagent.org/) and shell scripts. It worked. I was proud of it. Then Microsoft open-sourced a toolkit that covers most of it with [less than 0.1 milliseconds of overhead](https://github.com/microsoft/agent-governance-toolkit).
+I spent the better part of a month building agent governance from scratch. Container isolation with read-only root filesystems and dropped [Linux capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html). Self-rotating credentials with 15-minute TTLs. Write gates that require human approval for every external mutation. [Policy-as-code](https://www.openpolicyagent.org/) evaluated at runtime, not documented on a wiki page. Six patterns, tested across financial services, automotive, and defense. I wrote about them [in detail](/post/zero-trust-patterns-for-ai-developer-tools/), and I was proud of the result.
 
-That is a humbling thing to type.
+Then [Microsoft](https://www.microsoft.com/) released the [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit).
 
-## What Microsoft shipped
+## What caught my eye
 
-The [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) (AGT) is a runtime governance SDK. Four execution rings, from unrestricted to fully sandboxed, with per-action policies defined in [YAML](https://en.wikipedia.org/wiki/YAML), [OPA](https://www.openpolicyagent.org/), or [Cedar](https://www.cedarpolicy.com/). A kill-switch that terminates sessions mid-action. An [MCP](https://modelcontextprotocol.io/) Security Scanner that audits tool configurations before the agent starts. Cryptographic agent identity using [Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) and ML-DSA-65 for post-quantum readiness. SDKs in five languages.
+AGT is an open-source runtime governance SDK. Four execution rings, from Privileged down to Sandboxed, with per-action policies written in YAML, [OPA](https://www.openpolicyagent.org/), or [Cedar](https://www.cedarpolicy.com/). A kill-switch for immediate agent termination. An [MCP](https://modelcontextprotocol.io/) Security Scanner that audits tool configurations before the agent starts. [Zero-trust](https://en.wikipedia.org/wiki/Zero_trust_security_model) agent identity using [Ed25519](https://en.wikipedia.org/wiki/EdDSA) plus post-quantum [ML-DSA-65](https://en.wikipedia.org/wiki/CRYSTALS-Dilithium). SDKs in five languages. Coverage of the [OWASP Agentic](https://owasp.org/www-project-top-10-for-large-language-model-applications/) security risks.
 
-What caught my eye: they score [10/10 on the OWASP Top 10 for Agentic Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/). That is not a marketing claim, it is a coverage map against a published threat model. And the overhead number, <0.1ms per policy evaluation, means there is no performance excuse not to use it.
+Policy evaluation overhead: less than 0.1 milliseconds.
+
+Where I had to wire up [Podman](https://podman.io/) rootless containers, tmpfs mounts, and custom entrypoint scripts, AGT declares execution rings in a configuration file. Where I wrote OPA policies for each credential tier, AGT ships policy templates that cover the common patterns. I built governance by hand. Microsoft made it a `pip install`.
 
 ## They are not alone
 
-Same month. [Ceros](https://www.ceros.com/) shipped guardrails-as-a-service for agent orchestration. [Cycode](https://cycode.com/) launched agent supply chain security, scanning what your agents depend on before they run. [AWS Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) added runtime content filtering for agent outputs. [CircleCI](https://circleci.com/) shipped Chunk, an autonomous CI agent that fixes its own failures.
+AGT is the most complete implementation I have seen, but it is not an outlier. [AWS Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) applies runtime content filtering and grounding checks to model invocations. [CircleCI](https://circleci.com/) shipped an autonomous CI agent that diagnoses build failures and opens pull requests automatically. [Cursor](https://cursor.com/) built event-driven automations where AI-generated fixes merge without human intervention. Startups are building guardrails-as-a-service and agent supply chain security.
 
-Four governance products in one month is not a coincidence. It is a category forming in real time.
+Multiple governance products appearing in the same month is not a coincidence. It is a category forming.
 
 ## What is still missing
 
-AGT solves runtime governance: what an agent CAN do during a session. Per-action policies, execution rings, kill-switch. That is necessary and real.
+Here is what I noticed comparing AGT to what I built. AGT handles the runtime: what an agent can do in the moment. Per-action policies, execution rings, kill-switch. All essential.
 
-But nobody is solving the control plane: which agents are allowed where, who authorized them, what tools they can access across an organization, and how you audit all of it after the fact. The gap between "this agent session is governed" and "our organization's agent usage is governed" is where the hard problems live. Identity federation, tool approval workflows, cross-team policy inheritance, audit trails that survive session boundaries.
+Nobody handles the control plane.
 
-Runtime governance is the seatbelt. Organizational governance is the traffic system. We have seatbelts now. The roads are still lawless.
+Which agents are allowed in which environments? Who approved this agent's access to production credentials? When did the policy last change, and who reviewed it? How do you audit across fifty teams running different agents with different governance configurations?
 
-## The shift
+Picture an enterprise with five AI coding agents across twenty teams. Each team configured its own policies. Some have kill-switches. Some do not. Nobody has a single view of what is running, what it can access, or whether the governance is current. That is the gap, and it is the gap that matters for regulated industries.
 
-[DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps) happened when security stopped being a gate at the end of the pipeline and became infrastructure woven through it. That transition took years, and it started with tooling that made the right thing easier than the wrong thing.
+The distance between "this agent's actions are governed" and "this organization's agent usage is governed" is where the real work remains.
 
-Agent governance is at exactly that inflection point. The tooling just arrived. Runtime governance at <0.1ms overhead and zero cost means there is no rational reason to run an agent without it. The agents are real, the risks are documented, the mitigations now exist as open-source libraries you can install today.
+## The parallel
 
-If you are running AI agents in production without a governance layer, you are not being agile. You are being negligent.
+[DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps) happened when security stopped being a gate at the end of the pipeline and became infrastructure woven into every stage. Automated scanning in CI. Policy enforcement in merge requests. Compliance as code, not compliance as audit. The early adopters looked paranoid. Then breaches happened, regulations tightened, and the paranoid teams were the only ones still shipping.
 
-I am not retiring my hand-built patterns. Building them taught me what to look for when evaluating a framework. But I am glad the market caught up. The interesting question now is what happens when governance becomes so cheap that not having it is the harder choice to justify.
+Agent governance is at exactly that inflection point. The tooling exists. The overhead is negligible. The standards are published. If you are running AI agents in production without a governance layer, you are not being agile. You are being negligent.
+
+## What I am doing about it
+
+I am not retiring my hand-built patterns. They work, and I understand every line. But I am evaluating AGT seriously, because governance that costs nothing to add and less than a millisecond to run removes every excuse.
+
+The question is no longer whether agent governance will become standard. It will. The question is what happens when governance is so cheap that not having it becomes the harder position to defend.
