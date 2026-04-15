@@ -1,7 +1,7 @@
 # My personal blog Universalamateur.net powered by Hugo on GitLab Pages
 
-This is the README to my personal blog powered by [HuGo](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/) Static Site Generator using [GitLab Pages](https://gitlab.com/pages/hugo).
-The result you can find on [Universalamateur.net](https://Universalamateur.net/), [falko-sieverding.de](https://www.falko-sieverding.de/ ) and [Universalamateur.gitlab.io](https://Universalamateur.gitlab.io/)
+This is the README to my personal blog powered by [Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/) Static Site Generator using [GitLab Pages](https://gitlab.com/pages/hugo).
+The result you can find on [Universalamateur.net](https://Universalamateur.net/), [falko-sieverding.de](https://www.falko-sieverding.de/) and [Universalamateur.gitlab.io](https://Universalamateur.gitlab.io/)
 
 ## Settings in GitLab
 
@@ -12,12 +12,12 @@ The result you can find on [Universalamateur.net](https://Universalamateur.net/)
 
 ## Start with Hugo
 
-### Rquirements for local work
+### Requirements for local work
 
-We isntall Git and Hugo, then pull the repo is it exists, otherwise clone it.
-Then in the repo directory we update the git submodule there, the theme Anake for hugo.
+Install Git and Hugo, then pull the repo if it exists, otherwise clone it.
+Then in the repo directory we update the git submodule for the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
 
-#### MacOS M1
+#### MacOS
 
 ```bash
 brew install hugo git
@@ -35,82 +35,81 @@ cd Universalamateur.gitlab.io
 git submodule update --init --recursive
 ```
 
-### Starting a local Hogu Webserver
+### Starting a local Hugo Webserver
 
 ```bash
 hugo server -D -F
 ```
 
-- The -D argument tells Hugo to include draft post
-- The -F argument tells Hugo to include future dated post that are published
+- The `-D` argument tells Hugo to include draft posts
+- The `-F` argument tells Hugo to include future dated posts
 
-### Initital One time Setup localy was
+### Initial one-time setup
 
-Setting up the Site and adding the [Theme Anake](https://github.com/theNewDynamic/gohugo-theme-ananke).
+Setting up the site and adding the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
 
 ```bash
 hugo new site Universalamateur.gitlab.io
 cd Universalamateur.gitlab.io
 git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-echo "theme = 'ananke'" >> config.toml
-hugo server /D
+git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+hugo server -D
 ```
-
-### Implemented custom theme
-
-At the moment using Anake, Future our own theme based on Anake
 
 ## Posting with Hugo
 
-### Used Front Matter in Articles by default
+### Front matter (from `archetypes/post.md`)
 
 ```markdown
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date | time.Format ":date_long" }}
+date: {{ .Date }}
 draft: true
 tags: []
-featured_image: ""
-description: ""
+summary: ""
+showtoc: true
 ---
 ```
 
-#### featured image
+### Cover images
 
 1. Add the image to the folder `/static/images/`
-2. include in the Front Matter: `featured_image: '/images/NAME_OF_PICTURE.jpg'`
-3. to hide the header text on the featured image on a page, set in Fornt Matter `omit_header_text: true`
+2. Include in the front matter:
+   ```yaml
+   cover:
+     image: '/images/NAME_OF_PICTURE.jpg'
+   ```
 
-### Folder Structure after setup
+### Folder structure
 
-```markdown
+```
 .
-├── config.toml
+├── hugo.toml
 ├── archetypes
-│   ├── default.md      // default archetype for all articles
-│   └── post.md         // Declared archetype for posts
+│   ├── default.md
+│   └── post.md
 ├── content
-│   ├── _index.md       // Overwriting the initial Landing page with pst listing
-│   ├── about
-│   │   └── index.md    // Bio and Portfolio Page
-│   └── post
-│       ├── Blog-Setup-with-Hugo-on-GitLab.md   // A Technical BLog Article
-│       ├── My-Lasagna-recipe.md                // Post with recipes
-│       └── The-Initial-Post.md                 // and other Articles
+│   ├── _index.md
+│   ├── archives.md
+│   ├── search.md
+│   ├── about
+│   │   └── index.md
+│   └── post
+│       └── *.md
 ├── static
-│   └── images          // Folder for prepared images
-│       └── SunDown.jpg
+│   └── images
+└── themes
+    └── PaperMod          (git submodule)
 ```
 
-### Archetypes
+### Blog post creation
 
-### Blog Post Creation Commands
-
-- `hugo new post/NAME-OF-POST.md`
+```bash
+hugo new post/NAME-OF-POST.md
+```
 
 ## Ideas for the future
 
-### Used tags parser
+### Tags parser
 
-Write a python parser for a sheculed pipeline, which commits back into a md file the used tags and pages number used those tags plus links on
+Write a python parser for a scheduled pipeline, which commits back into a md file the used tags and page count using those tags plus links.
