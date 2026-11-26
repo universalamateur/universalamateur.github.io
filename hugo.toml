@@ -42,7 +42,7 @@ buildExpired = false
   [params.homeInfoParams]
     Title = "Falko Sieverding"
     Content = """
-I’m an applied AI engineer at OpenAI. I write about the software I build, from a tool that explains failed pipelines to a pricing calculator that works offline. Occasionally a board game takes over. [More about me](/about/)
+I’m an applied AI engineer at OpenAI. I write about the software I build, from a tool that explains failed pipelines to a pricing calculator that works offline. Occasionally a board game takes over. You can find me on [BoardGameGeek](https://boardgamegeek.com/user/zwobot) as zwobot. [More about me](/about/)
 """
 
   [[params.socialIcons]]
@@ -59,7 +59,11 @@ I’m an applied AI engineer at OpenAI. I write about the software I build, from
 
   [[params.socialIcons]]
     name = "mastodon"
-    url = "https://fosstodon.org/@universalamateur"
+    url = "https://fosstodon.org/@UniversalAmateur"
+
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/falkosieverding"
 
   [[params.socialIcons]]
     name = "rss"
