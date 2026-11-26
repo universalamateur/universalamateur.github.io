@@ -16,7 +16,7 @@ buildExpired = false
 [params]
   env = "production"
   title = "Universalamateur"
-  description = "The personal blog of Falko Sieverding"
+  description = "Build notes from Falko Sieverding, an applied AI engineer at OpenAI, on AI tools, software delivery and board games."
   keywords = ["blog", "AI", "DevSecOps", "board games"]
   author = "Falko Sieverding"
   DateFormat = "January 2, 2006"
@@ -40,14 +40,14 @@ buildExpired = false
   tocopen = false
 
   [params.homeInfoParams]
-    Title = "Universalamateur"
+    Title = "Falko Sieverding"
     Content = """
-AI Solutions Architect from Düsseldorf. Writing about AI agents, DevSecOps, board games, and whatever else I find worth sharing.
+I’m an applied AI engineer at OpenAI. I write about the software I build, from a tool that explains failed pipelines to a pricing calculator that works offline. Occasionally a board game takes over. [More about me](/about/)
 """
 
   [[params.socialIcons]]
     name = "gitlab"
-    url = "https://gitlab.com/fsieverding"
+    url = "https://gitlab.com/UniversalAmateur"
 
   [[params.socialIcons]]
     name = "github"
