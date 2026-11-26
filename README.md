@@ -1,5 +1,9 @@
 # My personal blog Universalamateur.net powered by Hugo on GitLab Pages
 
+![Project logo](./logo.png)
+
+[Lead repository on GitLab](https://gitlab.com/UniversalAmateur/universalamateur.gitlab.io)
+
 This is the README to my personal blog powered by [Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/) Static Site Generator using [GitLab Pages](https://gitlab.com/pages/hugo).
 The result you can find on [Universalamateur.net](https://Universalamateur.net/), [falko-sieverding.de](https://www.falko-sieverding.de/) and [Universalamateur.gitlab.io](https://Universalamateur.gitlab.io/)
 
